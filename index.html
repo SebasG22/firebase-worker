@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample Worker</title>
+    <style>
+    .container{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    input {
+        width: 100%;
+    margin: 10px 0;
+    }
+    textarea{
+        width: 100%; 
+    }
+    </style>
+</head>
+<body>
+    <h1> Query Firestore </h1>
+    <div class="container">
+        <fieldset>
+            <legend> Create a new project</legend>
+            <input id="projectName" type="text" placeholder="name"/>
+            <textarea id="projectDesc" placeholder="description"></textarea>
+            <button id="createProjectBtn"> Create Project </button>
+        </fieldset>
+        <fieldset>
+            <legend> List all projects</legend>
+            <button id="getProjectsBtn">Get Projects</button>
+        </fieldset>
+    </div>
+    <pre> Open the devtools and see the logs</pre>
+    <script src="./index.js"></script>
+</body>
+</html>
