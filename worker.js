@@ -1,10 +1,10 @@
 importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js');
-importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js');
+// importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js');
 importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js');
 
 // TODO: POINT THIS SCRIPT TO THE EXPERIMENTAL 
-importScripts('https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js');
+importScripts('/firestore-experimental/firestore-chebrian.js');
 
 
 firebase.initializeApp({
@@ -18,10 +18,10 @@ firebase.initializeApp({
 
   // TODO: ENABLE PERSISTENCE ON WORKER
   const firestore = firebase.firestore()
-//   .enablePersistence({experimentalForce: true})
-//   .catch(function(err) {
-//       console.error(err);
-//   });
+  .enablePersistence({experimentalForce: true})
+  .catch(function(err) {
+      console.error(err);
+  });
 
 self.addEventListener('message', (event) => {
     const data = event.data;
